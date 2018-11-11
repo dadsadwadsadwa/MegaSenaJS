@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+	<head>
+		<title>Mega Sena</title>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE-edge">
+	    <meta name="viewport" content="width=device-width, initial-scale=1">        
+	    <link href="../Bootstrap/css/bootstrap.min.css" rel="stylesheet">
+	    <style type="text/css">
+			h5{color:#000;font-size:29px;font-family:Arial,sans-serif;}
+			.mostra_numero{width:540px;height:50px;}
+			button{margin-top:10px;margin-bottom:-3px;}
+			a{color:#000;text-decoration:none;font-size:20px;}
+			a:hover{color:#f00;padding:3px;text-decoration:none;}
+		</style>
+	</head>
+	<body style="background-color: #ddd;">
+		<div class="container-fluid">
+			<!--Linha com todo o conteudo-->
+			<div class="row">
+				<!--Lado esquero-->
+				<div class="col-sm-6">
+					<div class="row">
+						<div style="border: 1px solid black;border-top: none;" class="col-sm-12">							
+							<a href="../index.html">MENU</a><br>
+							<!--Botão Sorteio-->
+							<Button class="btn btn-dark" onclick="imagemNumeroAleatorio()" style="margin-bottom: 5px;">Sortear</Button>
+						</div>
+						<div style="border-bottom: 1px solid black;" class="col-sm-2">
+							<!--Numero sorteado-->
+							<h5 id="num_imagem" class="mostra_numero"></h5>
+						</div>
+						<div style="border-bottom: 1px solid black;border-left: 1px solid black;border-right: 1px solid black;" class="col-sm-10">
+							<!--Numeros sorteados-->
+							<h5 id="lista" class="mostra_numero"></h5>
+						</div>
+					</div>
+				</div>
+				<!--Fim lado esquero-->
+				<!--Inicio lado direito-->
+				<div class="col-sm-6">
+					<div class="row">
+						<div style="border-bottom: 1px solid black;" class="col-sm-12">
+							<!--Botão para montar bilhete-->
+							<button onclick="montarBilhete()" class="btn btn-primary">Montar Bilhete</button>
+							<!--Botão bilhete Pronto--> 
+							<button onclick="bilhetePronto()" class="btn btn-primary">Bilhete Pronto</button>
+							<!--Botao adiciona Bilhete--> 
+							<button class="btn btn-success" onclick="adicionaBilhete()">+ bilhete</button> 
+							<!--Botão Jogar novamente-->
+							<button class="btn btn-danger" onclick="restart()">Joga novamente</button><br>
+							<!--Primeiro bilhete-->
+							<h5 id="bilhete"></h5>
+							<!--Segundo bilhete-->
+							<h5 id="bilhet"></h5>
+						</div>
+						<div class="col-sm-6">
+							<!--Numeros acertado-->
+							<div id="acerto"></div><br>
+						</div>
+						<div class="col-sm-6">
+							<!--Numeros errado-->
+							<div id="erro"></div>
+						</div>						
+					</div>
+					<!--Fim row secundaria principal-->
+				</div>
+				<!--Fim lado direito-->
+			</div>
+			<!--Fim linha conteudo total-->
+		</div>		
+		<!--Fim container-->
+
+
+		<script type="text/javascript" src="JavaScript/MegaSena.js"></script>	
+	</body>
+</html>
