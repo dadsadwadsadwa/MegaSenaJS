@@ -50,7 +50,7 @@ function adicionaBilhete(){
 	if(lista.length < 1){
 		bilhet=[];
 	}
-	if(lista.length < 1){
+	if(lista.length < 1 && bilhete.length >= 1){
 		while(bilhet.length < 6){
 		 	var numero = Math.ceil(Math.random()*60);
 			while(bilhet.indexOf(numero) != -1){
