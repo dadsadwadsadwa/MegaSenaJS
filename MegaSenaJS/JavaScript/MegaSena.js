@@ -26,7 +26,7 @@ function montarBilhete(){
 			}
 			cont++;
 		}
-		document.getElementById("bilhete").innerHTML = bilhe+"<br>";
+		document.getElementById("bilhete").innerHTML = bilhe.sort(function(a,b){return a - b})+"<br>";
 	}
 }
 
@@ -42,7 +42,7 @@ function bilhetePronto(){
 			}
 			bilhete.push(numeros);
 		}
-		document.getElementById("bilhete").innerHTML=bilhete+"<br>";
+		document.getElementById("bilhete").innerHTML=bilhete.sort(function(a,b){return a - b})+"<br>";
 	}
 }
 
@@ -58,7 +58,7 @@ function adicionaBilhete(){
 			}
 			bilhet.push(numero);
 		}
-		document.getElementById("bilhet").innerHTML = bilhet+"<br>";
+		document.getElementById("bilhet").innerHTML = bilhet.sort(function(a,b){return a - b})+"<br>";
 	}
 }
 
@@ -81,6 +81,10 @@ function imagemNumeroAleatorio(){//função de sortear um numero clicando na ima
 	}else{
 		num = lista[5];
 	}
+	erros = erros.sort(function(a,b){return a - b});
+	bilhete1 = bilhete1.sort(function(a,b){return a - b});
+	bilhete2 = bilhete2.sort(function(a,b){return a - b});
+	lista = lista.sort(function(a,b){return a - b});
 	var ac=document.getElementById("acerto").innerHTML="Acertos bilhete 1: "+bilhete1+"<br>"+"Acertos bilhete 2: "+bilhete2+"<br>";
 	var err=document.getElementById("erro").innerHTML="Erros: "+erros+"<br>";
 	if(bilhete != ""){

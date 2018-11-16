@@ -1,11 +1,6 @@
 //Variaveis{
-var cartel = [];
-var acerto = 0;
-var sortiados = [];
-var num;
-var nume;
+var cartel = [];var acerto = 0;var sortiados = [];var num;var nume;
 // }
-
 
 function cartela(){
 	while(cartel.length < 15){
@@ -15,7 +10,7 @@ function cartela(){
 		}
 		cartel.push(nume);
 	}
-	document.getElementById('cartela').innerHTML = cartel.sort();
+	document.getElementById('cartela').innerHTML = cartel.sort(function(a,b){return a - b});
 }
 cartela();
 
@@ -37,6 +32,6 @@ function sorteio(){
 	}
 	sortiados.push(num);
 	var numeros = document.getElementById('numeros').innerHTML = num;
-	var sorte = document.getElementById('grupo').innerHTML = sortiados.sort();
+	var sorte = document.getElementById('grupo').innerHTML = sortiados.sort(function(a,b){return a - b});
 }
 
