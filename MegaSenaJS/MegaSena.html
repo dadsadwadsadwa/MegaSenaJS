@@ -20,19 +20,19 @@
 			<!--Linha com todo o conteudo-->
 			<div class="row">
 				<!--Lado esquero-->
-				<div class="col-sm-6">
+				<div class="col-sm-6 col-xs-6">
 					<div class="row">
-						<div style="border:1px solid black;border-top:none;height:215px;background-image:url(imagem/sorte.png);background-repeat:no-repeat;background-size:680px;" class="col-sm-12">
+						<div style="border:1px solid black;border-top:none;height:100%;background-image:url(imagem/sorte.png);background-repeat:no-repeat;background-size:100%;" class="col-sm-12 col-xs-12">
 							<br><br><br><br><br><br><br>
 							<button class="btn btn-dark muda" onclick="imagemNumeroAleatorio()" style="margin-bottom:5px;float:left;">Sortear
 							</button>
 							<a href="../index.html" style="float:right;color:white;">MENU INICIAL</a>
 							<!--Botão Sorteio-->
 						</div>
-						<div class="col-sm-2" id="num_imagem" style="padding:3px;height:50px;text-align:center;font-size:25px;border-right:2px solid black;"></div>
-						<div id="lista" style="padding:3px;height:50px;text-align:center;font-size:25px;border-right:2px solid black;" class="col-sm-10">
+						<div class="col-sm-2  col-xs-2" id="num_imagem" style="padding:3px;height:50px;text-align:center;font-size:25px;border-right:2px solid black;"></div>
+						<div id="lista" style="padding:3px;height:50px;text-align:center;font-size:25px;border-right:2px solid black;" class="col-sm-10  col-xs-10">
 						</div>
-						<div id="resultado" class="col-sm-12" style="background-image:url(imagem/resulMega.png);height:400px;background-repeat:no-repeat;background-size:680px;">
+						<div id="resultado" class="col-sm-12 col-xs-12" style="background-image:url(imagem/resulMega.png);height:100%;background-repeat:no-repeat;background-size:100%;">
 							<br><br><br><br><br>
 							<div id="acerto"></div>
 							<div id="erro"></div>
@@ -41,16 +41,16 @@
 				</div>
 				<!--Fim lado esquero-->
 				<!--Inicio lado direito-->
-				<div class="col-sm-6">
+				<div class="col-sm-6 col-xs-6">
 					<div class="row">
-						<div class="col-sm-12" style="padding: 5px;">
+						<div class="col-sm-12 col-xs-12" style="padding: 5px;">
 							<button onclick="montarBilhete()" class="btn btn-primary">Montar Bilhete</button>&ensp;
 							<!--Botão para montar bilhete-->
 							<button onclick="bilhetePronto()" class="btn btn-primary">Bilhete Pronto</button>&ensp;
 							<!--Botão bilhete Pronto-->
 							<button class="btn btn-success" onclick="adicionaBilhete()">+ bilhete</button>&ensp;
 							<!--Botao adiciona Bilhete-->
-							<button class="btn btn-danger" onclick="restart()" style="float:right;">Joga novamente</button>&ensp;
+							<button class="btn btn-danger" onclick="restart()">Joga novamente</button>&ensp;
 							<!--Botão Jogar novamente-->
 
 							<!--Primeiro bilhete-->
@@ -58,11 +58,11 @@
 							<!--Segundo bilhete-->
 							<h5 id="bilhet" style="padding: 5px;"></h5>
 						</div>
-						<div class="col-sm-6">
+						<div class="col-sm-6 col-xs-6">
 							<!--Numeros acertado-->
 							<div id="acerto"></div><br>
 						</div>
-						<div class="col-sm-6">
+						<div class="col-sm-6 col-xs-6">
 							<!--Numeros errado-->
 							<div id="erro"></div>
 						</div>						
