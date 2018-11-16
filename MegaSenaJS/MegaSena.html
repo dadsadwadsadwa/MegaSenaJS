@@ -7,35 +7,54 @@
 	    <meta name="viewport" content="width=device-width, initial-scale=1">        
 	    <link href="../Bootstrap/css/bootstrap.min.css" rel="stylesheet">
 	    <style type="text/css">
-			h5{color:#000;font-size:29px;font-family:Arial,sans-serif;}
+			h5{color:#000;font-size:25px;font-family:Arial,sans-serif;}
 			.mostra_numero{width:540px;height:50px;margin-top: 5px;}
-			button{padding:5px;}
+			button{padding:3px;}
 			a{color:#000;text-decoration:none;font-size:20px;}
-			a:hover{color:#f00;padding:3px;text-decoration:none;}
-			.muda:hover{color:#0f0;}
+			a:hover{color:#f00;text-decoration:none;}
+			.bola{border-radius:100%;height:100%;background-color:#fff;text-align:center;font-size:400%;float:left;color:#000;width:80%}
+			.bilhete{padding:5px;height:50px;font-size:25px;text-align:center;margin-top:5px;color:#fff;font-size:25px;}
+
 		</style>
 	</head>
-	<body style="background-color: #ddd;">
-		<div class="container-fluid">
-			<!--Linha com todo o conteudo-->
+	<body style="background-image:url(imagem/fundoMega.jpg);">
+		<!--Area Menu-->
+		<div class="col-sm-12 col-xs-12">
+			<div class="row" style="border-bottom: 1px solid white;padding:5px;background-color:#000;">
+				<!--lado esquero-->						
+				<div class="col-sm-6">
+					<a href="../index.html" style="float:left;color:#fff;">MENU INICIAL</a>					
+				</div>
+				<!--fim lado esquerdo-->
+				<!--lado direito-->
+				<div class="col-sm-6">
+					<button onclick="montarBilhete()" class="btn btn-primary">Montar Bilhete</button>&ensp;
+					<!--Botão para montar bilhete-->
+					<button onclick="bilhetePronto()" class="btn btn-primary">Bilhete Pronto</button>&ensp;
+					<!--Botão bilhete Pronto-->
+					<button class="btn btn-success" onclick="adicionaBilhete()">+ bilhete</button>&ensp;
+					<!--Botao adiciona Bilhete-->
+					<button class="btn btn-danger" onclick="restart()">Joga novamente</button>&ensp;
+					<!--Botão Jogar novamente-->
+				</div>
+				<!--fim lado direito-->
+			</div>								
+		</div>
+		<!--Fim da area Menu-->
+		<div class="container-fluid">			
+			<!--Area Principal-->
 			<div class="row">
-				<!--Lado esquero-->
-				<div class="col-sm-6 col-xs-6">
-					<div class="row">
-						<div style="border:1px solid black;border-top:none;height:100%;background-image:url(imagem/sorte.png);background-repeat:no-repeat;background-size:100%;" class="col-sm-12 col-xs-12">
-							<br><br><br><br><br><br><br>
-							<button class="btn btn-dark muda" onclick="imagemNumeroAleatorio()" style="margin-bottom:5px;float:left;">Sortear
-							</button>
-							<a href="../index.html" style="float:right;color:white;">MENU INICIAL</a>
-							<!--Botão Sorteio-->
-						</div>
-						<div class="col-sm-2  col-xs-2" id="num_imagem" style="padding:3px;height:50px;text-align:center;font-size:25px;border-right:2px solid black;"></div>
-						<div id="lista" style="padding:3px;height:50px;text-align:center;font-size:25px;border-right:2px solid black;" class="col-sm-10  col-xs-10">
-						</div>
-						<div id="resultado" class="col-sm-12 col-xs-12" style="background-image:url(imagem/resulMega.png);height:100%;background-repeat:no-repeat;background-size:100%;">
-							<br><br><br><br><br>
-							<div id="acerto"></div>
-							<div id="erro"></div>
+				<!--Area esquerda-->			
+				<div class="col-sm-6">
+					<!--Lado esquero-->
+					<div class="row">					
+						<div class="col-sm-12 col-xs-12">						
+							<div class="row">
+								<div class="col-sm-4 col-xs-4"></div>
+								<div class="col-sm-4 col-xs-4 bola" style="background-color:#f00;height:140px;width:225px;"><div id="num_imagem" style="border-radius:100%;height:70%;width: 70%;background-color:#fff;margin-left:30px;margin-top:20px;text-align: center"></div></div>
+								<div class="col-sm-4 col-xs-4"></div><br>									
+							</div>
+							<img src="imagem/sorteador.png" onclick="imagemNumeroAleatorio()" style="cursor:pointer;">						
 						</div>
 					</div>									
 				</div>
@@ -43,39 +62,25 @@
 				<!--Inicio lado direito-->
 				<div class="col-sm-6 col-xs-6">
 					<div class="row">
-						<div class="col-sm-12 col-xs-12" style="padding: 5px;">
-							<button onclick="montarBilhete()" class="btn btn-primary">Montar Bilhete</button>&ensp;
-							<!--Botão para montar bilhete-->
-							<button onclick="bilhetePronto()" class="btn btn-primary">Bilhete Pronto</button>&ensp;
-							<!--Botão bilhete Pronto-->
-							<button class="btn btn-success" onclick="adicionaBilhete()">+ bilhete</button>&ensp;
-							<!--Botao adiciona Bilhete-->
-							<button class="btn btn-danger" onclick="restart()">Joga novamente</button>&ensp;
-							<!--Botão Jogar novamente-->
-
+						<div class="col-sm-6">
 							<!--Primeiro bilhete-->
-							<h5 id="bilhete" style="padding: 2px;"></h5>
+							<h5 id="bilhete" class="bilhete"></h5>
 							<!--Segundo bilhete-->
-							<h5 id="bilhet" style="padding: 5px;"></h5>
+							<h5 id="bilhet" class="bilhete"></h5>
 						</div>
-						<div class="col-sm-6 col-xs-6">
-							<!--Numeros acertado-->
-							<div id="acerto"></div><br>
-						</div>
-						<div class="col-sm-6 col-xs-6">
-							<!--Numeros errado-->
-							<div id="erro"></div>
-						</div>						
+						<div id="resultado" class="col-sm-12 col-xs-12" class="mostraNumero" style="color:#000;text-align:center;">
+							<h1 style="font-size:70px;">RESULTADO</h1>
+							<div id="acerto" class="resul"></div>
+							<div id="erro" class="resul"></div>
+						</div>										
 					</div>
 					<!--Fim row secundaria principal-->
 				</div>
 				<!--Fim lado direito-->
 			</div>
-			<!--Fim linha conteudo total-->
+			<!--Fim area Principal-->
 		</div>		
 		<!--Fim container-->
-
-
 		<script type="text/javascript" src="JavaScript/MegaSena.js"></script>	
 	</body>
 </html>

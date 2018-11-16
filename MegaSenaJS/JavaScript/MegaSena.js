@@ -20,7 +20,7 @@ function montarBilhete(){
 				while(bilhe.indexOf(numeros) != -1){
 					numeros = parseInt(prompt());
 				}
-				if(numeros != " "){			
+				if(numeros != NaN && numeros < 61){			
 					bilhe.push(numeros);
 				}
 			}
@@ -85,13 +85,12 @@ function imagemNumeroAleatorio(){//função de sortear um numero clicando na ima
 	bilhete1 = bilhete1.sort(function(a,b){return a - b});
 	bilhete2 = bilhete2.sort(function(a,b){return a - b});
 	lista = lista.sort(function(a,b){return a - b});
-	/*
-	var ac=document.getElementById("acerto").innerHTML="Acertos bilhete 1: "+bilhete1+"<br>"+"Acertos bilhete 2: "+bilhete2+"<br>";
-	var err=document.getElementById("erro").innerHTML="Erros: "+erros+"<br>";
-	*/
+	
 	if(bilhete != ""){
-		var numero = document.getElementById('num_imagem').innerHTML = num;
-		var list = document.getElementById('lista').innerHTML = lista;
+		//var bolas=document.getElementById('lista').innerHTML=lista;
+		var numero = document.getElementById('num_imagem').innerHTML=num;
+		var ac=document.getElementById("acerto").innerHTML="<br>"+"Acertos bilhete 1: "+bilhete1+"<br>"+"Acertos bilhete 2: "+bilhete2+"<br>";
+		var err=document.getElementById("erro").innerHTML="Erros: "+erros+"<br>";		
 	}
 }
 
@@ -100,5 +99,7 @@ function restart(){
 	document.getElementById("bilhete").innerHTML="";
 	document.getElementById("bilhet").innerHTML="";
 	document.getElementById("num_imagem").innerHTML="";
-	document.getElementById("lista").innerHTML="";
+	//document.getElementById("lista").innerHTML="";
+	document.getElementById("acerto").innerHTML="";
+	document.getElementById("erro").innerHTML="";
 }
