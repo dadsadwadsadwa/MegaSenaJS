@@ -85,8 +85,10 @@ function imagemNumeroAleatorio(){//função de sortear um numero clicando na ima
 	bilhete1 = bilhete1.sort(function(a,b){return a - b});
 	bilhete2 = bilhete2.sort(function(a,b){return a - b});
 	lista = lista.sort(function(a,b){return a - b});
+	/*
 	var ac=document.getElementById("acerto").innerHTML="Acertos bilhete 1: "+bilhete1+"<br>"+"Acertos bilhete 2: "+bilhete2+"<br>";
 	var err=document.getElementById("erro").innerHTML="Erros: "+erros+"<br>";
+	*/
 	if(bilhete != ""){
 		var numero = document.getElementById('num_imagem').innerHTML = num;
 		var list = document.getElementById('lista').innerHTML = lista;
@@ -97,8 +99,6 @@ function restart(){
 	bilhete=[];lista=[];bilhete1=[];bilhete2=[];erros=[];bilhet=[];bilhe=[];
 	document.getElementById("bilhete").innerHTML="";
 	document.getElementById("bilhet").innerHTML="";
-	document.getElementById("acerto").innerHTML="";
-	document.getElementById("erro").innerHTML="";
 	document.getElementById("num_imagem").innerHTML="";
 	document.getElementById("lista").innerHTML="";
 }
