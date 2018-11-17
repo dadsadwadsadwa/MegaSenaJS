@@ -90,7 +90,7 @@ function imagemNumeroAleatorio(){//função de sortear um numero clicando na ima
 		var bolas=document.getElementById('lista').innerHTML=lista;
 		var numero = document.getElementById('num_imagem').innerHTML=num;
 		var ac=document.getElementById("acerto").innerHTML="bilhete 1: "+bilhete1+"<br>"+"bilhete 2: "+bilhete2+"<br>";
-		var err=document.getElementById("erro").innerHTML="Erros: "+erros+"<br>";		
+		var err=document.getElementById("erro").innerHTML=erros;		
 	}
 }
 
